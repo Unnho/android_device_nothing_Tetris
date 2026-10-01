@@ -141,6 +141,10 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 include device/bliss/sepolicy/libion/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+ifneq ($(TARGET_BUILD_VARIANT),user)
+# AEE/log HAL sepolicy depends on sepolicy_vndr debug attributes
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor_debug
+endif
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

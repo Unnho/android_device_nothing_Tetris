@@ -1,0 +1,2 @@
+# MediaTek AEE AIDL service (aee@1.0/@1.1 are handled by sepolicy_vndr debug)
+/vendor/bin/hw/vendor\.mediatek\.hardware\.aee@V1-service    u:object_r:aee_hal_exec:s0

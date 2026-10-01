@@ -6,3 +6,8 @@ vendor.goodix.hardware.biometrics.fingerprint.IGoodixFingerprintDaemon/default  
 
 # Sensors
 vendor.noth.hardware.sensor.sensor_extension.ISensorExtension/default    u:object_r:hal_sensors_service:s0
+
+# MediaTek AIDL HALs (atcid, dmc, apmonitor)
+vendor.mediatek.hardware.atci.IAtcid/default    u:object_r:mtk_hal_atci_service:s0
+vendor.mediatek.hardware.dmc.IDmcService/default    u:object_r:mtk_hal_dmc_service:s0
+vendor.mediatek.hardware.apmonitor.IApmService/default    u:object_r:mtk_hal_apm_service:s0

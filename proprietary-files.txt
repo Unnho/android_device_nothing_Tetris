@@ -710,6 +710,29 @@ vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
 vendor/firmware/conninfra.cfg
 
+# Debug and logging (AEE, ATCID, DMC, LogHidl)
+vendor/bin/atcid
+vendor/bin/dmc_core
+vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
+vendor/bin/hw/vendor.mediatek.hardware.aee@V1-service
+vendor/bin/loghidlvendorservice
+vendor/etc/init/atcid.rc
+vendor/etc/init/dmc_core.rc
+vendor/etc/init/loghidlvendorservice.rc
+vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
+vendor/etc/init/vendor.mediatek.hardware.aee@V1-service.rc
+vendor/lib64/libasn1c_core.so
+vendor/lib64/libicd_decoder.so
+vendor/lib64/libtranslator_utils.so
+vendor/lib64/libwifitest.so
+vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
+vendor/lib64/vendor.mediatek.hardware.aee@1.1.so
+vendor/lib64/vendor.mediatek.hardware.atci-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.dmc-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.log-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
+
 # Display
 vendor/bin/hw/mt6878/android.hardware.graphics.allocator-V2-service-mediatek.mt6878;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
 vendor/bin/hw/mt6878/arm.mali.platform-service.mediatek.mt6878;SYMLINK=vendor/bin/hw/arm.mali.platform-service.mediatek
@@ -1264,7 +1287,9 @@ vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk.so
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/netdagent
+vendor/etc/init/android.hardware.tetheroffload-V1-service.rc
 vendor/etc/init/netdagent.rc
+vendor/etc/vintf/manifest/android.hardware.tetheroffload-V1-service.xml
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libifcutils_mtk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so

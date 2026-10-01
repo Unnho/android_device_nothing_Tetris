@@ -1,0 +1,9 @@
+# service_manager access for MediaTek AIDL HALs (mirrors stock vendor sepolicy)
+allow hal_mtk_atci_client mtk_hal_atci_service:service_manager find;
+allow hal_mtk_atci_server mtk_hal_atci_service:service_manager { add find };
+
+allow hal_mtk_dmc_client mtk_hal_dmc_service:service_manager find;
+allow hal_mtk_dmc_server mtk_hal_dmc_service:service_manager { add find };
+
+allow hal_mtk_apm_client mtk_hal_apm_service:service_manager find;
+allow hal_mtk_apm_server mtk_hal_apm_service:service_manager { add find };

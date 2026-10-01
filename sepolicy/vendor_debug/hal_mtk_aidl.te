@@ -1,0 +1,6 @@
+# service_manager access for MediaTek AIDL AEE/log HALs (mirrors stock vendor sepolicy)
+allow hal_mtk_aee_client mtk_hal_aee_service:service_manager find;
+allow hal_mtk_aee_server mtk_hal_aee_service:service_manager { add find };
+
+allow hal_mtk_log_client mtk_hal_log_service:service_manager find;
+allow hal_mtk_log_server mtk_hal_log_service:service_manager { add find };
