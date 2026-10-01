@@ -1372,3 +1372,8 @@ vendor/lib64/libwifinvram.so
 vendor/lib64/libwifinvramdata.so
 vendor/lib64/libwpa_client.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
+
+# ZRAM writeback
+vendor/bin/nt_gen_zramwriteback_fstab
+vendor/etc/first_zramwriteback.fstab
+vendor/etc/init/nt_zramwriteback.rc
