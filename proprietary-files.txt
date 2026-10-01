@@ -1097,6 +1097,33 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
+# NT Core
+system_ext/bin/nt_bpf
+system_ext/bin/nt_core_log
+system_ext/bin/nt_file_defrag
+system_ext/bin/nt_get_node_prop.sh
+system_ext/bin/nt_id_recorder
+system_ext/bin/nt_key_monitor
+system_ext/bin/nt_logkit
+system_ext/bin/nt_ota_notifier
+system_ext/bin/nt_smartGC3
+system_ext/bin/nt_tzdbg_recorder
+system_ext/bin/nt_xsl_parser
+system_ext/etc/init/nt_bpf.rc
+system_ext/etc/init/nt_core.rc
+system_ext/etc/init/nt_logkit.rc
+
+# NT Performance
+system_ext/etc/init/nt_performance_config.rc
+system_ext/etc/init/nt_performance_init.rc
+system_ext/etc/nt_performance/cmd_table.xml
+vendor/etc/nt_performance/activity_customization.xml
+vendor/etc/nt_performance/nt_named_thread_affinity.xml
+vendor/etc/nt_performance/platform_config.xml
+vendor/etc/nt_performance/scene_table.xml
+vendor/etc/performance/cmd_table.xml
+vendor/etc/performance/scene_table.xml
+
 # NTF
 vendor/bin/ntf-service
 vendor/etc/init/init.ntf.rc
