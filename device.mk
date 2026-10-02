@@ -102,6 +102,7 @@ PRODUCT_COPY_FILES += \
 
 # Charging control
 PRODUCT_PACKAGES += \
+    chargingctl \
     chargingd
 
 # Display

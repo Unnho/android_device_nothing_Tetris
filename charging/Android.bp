@@ -21,3 +21,15 @@ cc_binary {
         "liblog",
     ],
 }
+
+// Deliberately bionic-only: shell may execute this vendor binary but may
+// not open files out of /vendor/lib64, so no libbase/liblog/libc++.
+cc_binary {
+    name: "chargingctl",
+    vendor: true,
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    srcs: ["chargingctl.c"],
+}
