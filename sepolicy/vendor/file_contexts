@@ -4,6 +4,10 @@
 # Charge
 /vendor/bin/hw/vendor\.noth\.hardware\.charge-service    u:object_r:hal_health_default_exec:s0
 
+# Charging control
+/vendor/bin/chargingctl    u:object_r:vendor_charging_control_tool_exec:s0
+/vendor/bin/chargingd      u:object_r:vendor_charging_control_exec:s0
+
 # Face unlock
 /vendor/bin/hw/android\.hardware\.biometrics\.face-service\.noth    u:object_r:hal_face_default_exec:s0
 

@@ -1,3 +1,7 @@
+# Charging control
+persist.vendor.charging.    u:object_r:vendor_charging_control_prop:s0
+vendor.charging.            u:object_r:vendor_charging_control_prop:s0
+
 # Fingerprint
 persist.vendor.goodix.dump_data     u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.overlay.fp_algo      u:object_r:vendor_fingerprint_prop:s0

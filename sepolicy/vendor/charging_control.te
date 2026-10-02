@@ -1,0 +1,38 @@
+# Charging control daemon (chargingd) and its CLI (chargingctl).
+#
+# chargingd drives /proc/charger/* directly: charge wattage profiles
+# (scenario_fcc), charge on/off (usb_charger_en, shared with LineageOS
+# ChargingControl), SOC ceiling and temperature gating. chargingctl only
+# writes persist.vendor.charging.* properties, so it stays in the caller's
+# domain on purpose (platform neverallows keep core domains out of vendor
+# domains).
+
+type vendor_charging_control, domain;
+type vendor_charging_control_exec, exec_type, vendor_file_type, file_type;
+type vendor_charging_control_tool_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_charging_control)
+
+# /proc/charger control and state nodes.
+r_dir_file(vendor_charging_control, vendor_proc_charger)
+allow vendor_charging_control vendor_proc_charger:file rw_file_perms;
+allow vendor_charging_control proc:dir search;
+
+# Battery gauge and USB port sensors under /sys/class/power_supply, plus
+# the mtk-master-charger VBUS cap (voltage_max): MTK's base genfs_contexts
+# labels /devices/platform/charger/power_supply as sysfs_batteryinfo, so
+# read/write here covers both sensors and the cap node.
+allow vendor_charging_control sysfs_batteryinfo:dir r_dir_perms;
+allow vendor_charging_control sysfs_batteryinfo:file rw_file_perms;
+allow vendor_charging_control sysfs:dir r_dir_perms;
+allow vendor_charging_control sysfs:file r_file_perms;
+
+# Configuration (persist.vendor.charging.*) and status (vendor.charging.*).
+set_prop(vendor_charging_control, vendor_charging_control_prop)
+get_prop(vendor_charging_control, vendor_charging_control_prop)
+
+# chargingctl runs as the invoking domain (shell/root) and only needs the
+# same properties plus execute access to its own binary.
+allow shell vendor_charging_control_tool_exec:file { getattr read open execute execute_no_trans map };
+set_prop(shell, vendor_charging_control_prop)
+get_prop(shell, vendor_charging_control_prop)
