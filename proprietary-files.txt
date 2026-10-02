@@ -1144,6 +1144,9 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
+# Nothing features
+system_ext/etc/permissions/com.nothing.feature.xml
+
 # NT Core
 system_ext/bin/nt_bpf
 system_ext/bin/nt_core_log

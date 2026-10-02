@@ -278,6 +278,10 @@ PRODUCT_COPY_FILES += \
 # Properties
 include hardware/mediatek/configs/properties/vendor_logtag.mk
 
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.build.nothing.feature.base=0xe24800001004458438124a040106b4247b97ffL \
+    ro.build.nothing.feature.diff.device.Tetris=0x240004030440818012cf3b13f4d02250c401c0L
+
 # Radio
 ENABLE_VENDOR_RIL_SERVICE := true
 
