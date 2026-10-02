@@ -1,3 +1,14 @@
 allow mtk_hal_camera vendor_ntf_file:file r_file_perms;
 allow mtk_hal_camera vendor_data_file:file r_file_perms;
 get_prop(mtk_hal_camera, camera_config_prop)
+
+# Nothing camera HAL (vendor.noth.hardware.camera-service) registers
+# vendor.noth.hardware.camera.INtCamService/default; client set mirrors stock.
+allow mtk_hal_camera vendor_hal_noth_camera_service:service_manager { add find };
+allow system_server vendor_hal_noth_camera_service:service_manager find;
+allow system_app vendor_hal_noth_camera_service:service_manager find;
+allow platform_app vendor_hal_noth_camera_service:service_manager find;
+binder_call(system_app, mtk_hal_camera)
+binder_call(mtk_hal_camera, system_app)
+binder_call(platform_app, mtk_hal_camera)
+binder_call(mtk_hal_camera, platform_app)

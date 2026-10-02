@@ -2,3 +2,7 @@
 type mtk_hal_atci_service, protected_service, hal_service_type, service_manager_type;
 type mtk_hal_dmc_service, protected_service, hal_service_type, service_manager_type;
 type mtk_hal_apm_service, protected_service, hal_service_type, service_manager_type;
+
+# AIDL service types for Nothing HALs served by shipped blobs
+type vendor_hal_noth_camera_service, protected_service, hal_service_type, service_manager_type;
+type hal_stability_aidl_service, protected_service, hal_service_type, service_manager_type;

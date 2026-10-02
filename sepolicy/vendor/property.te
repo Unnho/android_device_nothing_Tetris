@@ -6,3 +6,6 @@ vendor_internal_prop(vendor_persist_camera_prop)
 
 # Fingerprint
 vendor_internal_prop(vendor_fingerprint_prop)
+
+# Nothing vendor properties (stability HAL and stock client readers)
+vendor_public_prop(vendor_nothing_property)

@@ -1,0 +1,34 @@
+# Nothing stability HAL (vendor.noth.hardware.stability-service),
+# domain and service rules mirror the stock vendor sepolicy.
+
+type vendor_stability_default, domain;
+type vendor_stability_default_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_stability_default)
+
+# AIDL service registration (vendor.noth.hardware.stability.IStability/default)
+allow vendor_stability_default hal_stability_aidl_service:service_manager { add find };
+allow system_server hal_stability_aidl_service:service_manager find;
+
+# binder with framework servicemanager
+binder_call(vendor_stability_default, servicemanager)
+binder_call(servicemanager, vendor_stability_default)
+allow servicemanager vendor_stability_default:dir search;
+allow servicemanager vendor_stability_default:file r_file_perms;
+allow servicemanager vendor_stability_default:process getattr;
+
+# binder with system_server (stock client of IStability)
+binder_call(vendor_stability_default, system_server)
+binder_call(system_server, vendor_stability_default)
+
+# stability log partitions (/dev/block/by-name/binfo, nt_reserve1)
+type nt_stability_block_device, dev_type;
+allow vendor_stability_default block_device:dir search;
+allow vendor_stability_default nt_stability_block_device:blk_file { ioctl read write getattr lock append map open watch watch_reads };
+
+# Nothing vendor properties
+set_prop(vendor_stability_default, vendor_nothing_property)
+get_prop(vendor_stability_default, vendor_nothing_property)
+get_prop(system_server, vendor_nothing_property)
+get_prop(system_app, vendor_nothing_property)
+get_prop(platform_app, vendor_nothing_property)

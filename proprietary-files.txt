@@ -705,6 +705,23 @@ vendor/etc/camera/ntcamoverridesettings.txt
 vendor/etc/bh3.dla
 vendor/etc/default_pd_calibration.bin
 
+# Charge, Stability and Camera HALs
+vendor/bin/hw/vendor.noth.hardware.camera-service
+vendor/bin/hw/vendor.noth.hardware.charge-service
+vendor/bin/hw/vendor.noth.hardware.stability-service
+vendor/etc/init/vendor.noth.hardware.camera-service.rc
+vendor/etc/init/vendor.noth.hardware.charge-service.rc
+vendor/etc/init/vendor.noth.hardware.stability-service.rc
+vendor/etc/vintf/manifest/vendor.noth.hardware.camera-service.xml
+vendor/etc/vintf/manifest/vendor.noth.hardware.charge-service.xml
+vendor/etc/vintf/manifest/vendor.noth.hardware.stability-service.xml
+vendor/lib64/libntcamcore.so
+vendor/lib64/libntcamextened.so
+vendor/lib64/libntcamera2ndk_vendor_v2.so
+vendor/lib64/vendor.noth.hardware.camera-V1-ndk.so
+vendor/lib64/vendor.noth.hardware.charge-V1-ndk.so
+vendor/lib64/vendor.noth.hardware.stability-V1-ndk.so
+
 # Connectivity
 vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
