@@ -1,0 +1,4 @@
+service chargingd /vendor/bin/chargingd
+    class latestart
+    user system
+    group system

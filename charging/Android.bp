@@ -1,0 +1,23 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "chargingd",
+    vendor: true,
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-DLOG_TAG=\"chargingd\"",
+    ],
+    init_rc: ["chargingd.rc"],
+    srcs: [
+        "ChargingController.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "liblog",
+    ],
+}
